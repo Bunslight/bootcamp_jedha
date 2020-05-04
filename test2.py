@@ -26,9 +26,9 @@ def extract_Countries_links_list_from_Main_page():
             if cells[1].find('a'):
                 country_link = cells[1].find('a')
                 Countries_links_list.append (country_link.get('href'))
-    return Countries_links_list 
+    return Countries_links_list
 
-# Tronque la liste des liens de la démographie des pays du monde pour garder les n premiers    
+# Tronque la liste des liens de la démographie des pays du monde pour garder les n premiers
 def Links_N_Pays_les_peuples(n):
     Countries_link_page_list=[]
     Links_pays_plus_peuples=[]
@@ -46,7 +46,7 @@ def Extract_Tableau_Population_Evolution_Of_Country(url,pays):
 
     table_list=[]
     content = getHTMLContent(url)
-    
+
     if ((pays == India) or (pays == China) or (pays==Bangladesh) or (pays==Ethiopia) or (pays==Congo) or (pays==Iran)):
         table = content.find('table', {'class': 'wikitable'})
         table_list=extract_data_table(table)
@@ -66,7 +66,7 @@ def Extract_Tableau_Population_Evolution_Of_Country(url,pays):
     elif ((pays == Indonesia) or (pays == Brazil) or (pays== Nigeria) or
           (pays == Russia) or (pays == Mexico) or (pays == Japan) or
           (pays == Egypt) or (pays == Vietnam) or (pays == Germany) or (pays == Turkey)):
-        
+
         table = content.find('table', {'class': 'toccolours'})
         table_list=extract_data_table(table)
     elif (pays== Pakistan):
@@ -75,7 +75,7 @@ def Extract_Tableau_Population_Evolution_Of_Country(url,pays):
     else:
         print("other country")
     return table_list
-    
+
 
 # Extrait table des données.
 def extract_data_table(table):
@@ -121,7 +121,7 @@ Turkey=18
 
 def Main():
 
-    
+
     wiki_url='https://en.wikipedia.org'
     N=20
     Links_Vingt_pays_les_plus_peuples = []
@@ -180,10 +180,10 @@ def Main():
     #print(Table_Germany)
     #print(Table_Iran)
     print(Table_Turkey)
-    
-        
-        
-    
+    print("modifications")
+
+
+
+
 
 Main()
-
